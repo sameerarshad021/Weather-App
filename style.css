@@ -1,0 +1,74 @@
+body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Inter', sans-serif; }
+#map {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Map sab se niche */
+}
+
+
+.weather-card {
+    position: absolute; bottom: 30px; left: 30px; z-index: 1000;
+    width: 380px; background: rgba(15, 15, 15, 0.98); border-radius: 25px;
+    padding: 25px; color: white; border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.search-row { display: flex; gap: 10px; margin-bottom: 25px; background: #222; padding: 5px; border-radius: 15px; }
+.search-row input { flex: 1; background: transparent; border: none; padding: 10px; color: white; outline: none; font-size: 15px; }
+.search-row button { background: #00d2ff; border: none; padding: 10px 20px; border-radius: 12px; font-weight: 800; cursor: pointer; color: #000; }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+.city-title { font-size: 28px; font-weight: 900; margin: 0; letter-spacing: 1px; color: #fff; }
+.time-text { font-size: 13px; opacity: 0.5; }
+.weather-label { font-size: 11px; font-weight: 700; opacity: 0.4; text-transform: uppercase; }
+
+
+
+.main-temp-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.temp-number { font-size: 90px; font-weight: 700; line-height: 1; }
+.weather-desc { font-size: 24px; color: #00d2ff; font-weight: 600; margin: 5px 0 0 0; }
+/* .weather-icon-img { width: 100px; height: 100px; margin-right: -15px; } */
+
+.weather-icon-img {
+    position: relative;
+    width: 110px;
+    height: 90px;
+    font-size: 0;
+}
+
+/* Sun */
+.weather-icon-img .sun {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 55px;
+    z-index: 1;
+}
+
+/* Moon */
+.weather-icon-img .moon {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 55px;
+    z-index: 1;
+}
+
+/* Cloud */
+.weather-icon-img .cloud {
+    position: absolute;
+    bottom: 0;
+    left: 35px;
+    font-size: 50px;
+    z-index: 2;
+}
+
+.details-grid { display: grid; grid-template-columns: 4fr 1fr; gap: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; }
+.detail-box { display: flex; flex-direction: column; gap: 4px; }
+.detail-box span { font-size: 12px; color: rgba(255, 255, 255, 0.5); }
+.detail-box strong { font-size: 18px; font-weight: 700; }
+
+.welcome-text { text-align: center; opacity: 0.5; padding: 20px; font-style: italic; }
