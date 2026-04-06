@@ -73,109 +73,110 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: 
 
 .welcome-text { text-align: center; opacity: 0.5; padding: 20px; font-style: italic; }
 
-/* Tablet */
-@media (max-width: 768px) {
+/* Tablet + Mobile */
+@media screen and (max-width: 768px) {
     .weather-card {
-        width: 90%;
-        left: 50%;
-        bottom: 20px;
-        transform: translateX(-50%);
-        padding: 20px;
-    }
-
-    .city-title {
-        font-size: 24px;
-    }
-
-    .temp-number {
-        font-size: 70px;
-    }
-
-    .weather-desc {
-        font-size: 20px;
-    }
-
-    .weather-icon-img {
-        width: 90px;
-        height: 75px;
-    }
-
-    .weather-icon-img .sun,
-    .weather-icon-img .moon {
-        font-size: 45px;
-        left: 20px;
-    }
-
-    .weather-icon-img .cloud {
-        font-size: 40px;
-        left: 28px;
-    }
-
-    .details-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    .weather-card {
-        width: calc(100% - 20px);
+        position: fixed;
         left: 10px;
         right: 10px;
         bottom: 10px;
-        transform: none;
+        width: auto;
+        max-width: none;
         padding: 18px;
-        border-radius: 20px;
+        border-radius: 18px;
+        box-sizing: border-box;
     }
 
     .search-row {
+        display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
     }
 
+    .search-row input,
     .search-row button {
         width: 100%;
+        box-sizing: border-box;
     }
 
-    .city-title {
-        font-size: 22px;
+    .main-temp-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
     }
 
     .temp-number {
-        font-size: 60px;
+        font-size: 58px;
     }
 
     .weather-desc {
         font-size: 18px;
     }
 
-    .main-temp-row {
-        margin-bottom: 20px;
+    .city-title {
+        font-size: 22px;
     }
 
     .weather-icon-img {
-        width: 80px;
-        height: 65px;
+        width: 75px;
+        height: 60px;
     }
 
     .weather-icon-img .sun,
     .weather-icon-img .moon {
-        font-size: 40px;
+        font-size: 36px;
         left: 18px;
     }
 
     .weather-icon-img .cloud {
-        font-size: 35px;
-        left: 25px;
+        font-size: 32px;
+        left: 24px;
     }
 
     .details-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
 
     .detail-box strong {
+        font-size: 15px;
+    }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+    .weather-card {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        padding: 15px;
+    }
+
+    .temp-number {
+        font-size: 50px;
+    }
+
+    .weather-desc {
         font-size: 16px;
+    }
+
+    .city-title {
+        font-size: 20px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .detail-box strong {
+        font-size: 14px;
+    }
+
+    .detail-box span {
+        font-size: 11px;
     }
 }
