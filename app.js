@@ -15,7 +15,7 @@ async function getWeather() {
         const data = await response.json();
 
         if (data.cod !== 200) {
-            alert("City not found! Sahi naam likho bhai.");
+            alert("City not found!.");
             return;
         }
 
@@ -27,10 +27,13 @@ async function getWeather() {
         const temp = Math.round(data.main.temp);
         const feelsLike = Math.round(data.main.feels_like);
         const dewPoint = Math.round(data.main.temp - ((100 - data.main.humidity) / 5));
-        const currentTime = new Date().toLocaleTimeString([], {
-            hour: '2-digit',
-            minute: '2-digit'
-        });
+        const utc = new Date().getTime() + (new Date().getTimezoneOffset() * 60000);
+const cityTime = new Date(utc + (data.timezone * 1000));
+
+const currentTime = cityTime.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit'
+});
 
         // Dynamic weather emoji logic
         const weatherMain = data.weather[0].main.toLowerCase();
